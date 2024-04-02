@@ -40,12 +40,12 @@ class WPCM_Meta_Box_Match_Players {
 				<div id="wpcm_lineup" class="tabs-panel">
 					<?php self::wpcm_match_player_stats_table( $players, 'lineup' ); ?>
 					<p class="wpcm_counter"><?php esc_html_e( 'Starting lineup selected:', 'wp-club-manager' ); ?> <span class="counter"></span></p>
-					<p><img src="<?php bloginfo( 'url' ); ?>/wp-admin/images/loading.gif" id="loading-animation" /></p>
+					<p><img src="<?php echo esc_url( admin_url() ); ?>images/loading.gif" id="loading-animation" /></p>
 				</div>
 				<div id="wpcm_subs" class="tabs-panel" style="display: none;">
 					<?php self::wpcm_match_player_stats_table( $players, 'subs' ); ?>
 					<p class="wpcm_counter"><?php esc_html_e( 'Substitutes selected:', 'wp-club-manager' ); ?> <span class="counter"></span></p>
-					<p><img src="<?php bloginfo( 'url' ); ?>/wp-admin/images/loading.gif" id="loading-animation" /></p>
+					<p><img src="<?php echo esc_url( admin_url() ); ?>images/loading.gif" id="loading-animation" /></p>
 				</div>
 				<div id="wpcm_subs_not_used" class="tabs-panel" style="display: none;">
 					<?php self::wpcm_match_player_stats_table( $players, 'subs_not_used' ); ?>

@@ -82,7 +82,10 @@ function wpcm_match_players_item_order() {
 
 	global $wpdb;
 
-	$order   = explode( ',', $_POST['order'] ); // phpcs:ignore
+	$ids = filter_input( INPUT_POST, 'order', FILTER_UNSAFE_RAW );
+	$ids = sanitize_text_field( $ids );
+
+	$order   = array_map( 'intval', explode( ',', $ids ) );
 	$counter = 0;
 	foreach ( $order as $item_id ) {
 		if ( ! is_int( $item_id ) ) {
