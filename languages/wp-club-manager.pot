@@ -2,9 +2,9 @@
 # This file is distributed under the GPLv3.
 msgid ""
 msgstr ""
-"Project-Id-Version: WP Club Manager 2.2.15\n"
+"Project-Id-Version: WP Club Manager 2.2.16\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wp-club-manager\n"
-"POT-Creation-Date: 2024-03-26 12:05:07+00:00\n"
+"POT-Creation-Date: 2024-04-02 15:11:45+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -1914,12 +1914,12 @@ msgid "Match Outcome"
 msgstr ""
 
 #: includes/admin/post-types/meta-boxes/class-wpcm-meta-box-match-result.php:411
-#: includes/wpcm-match-functions.php:201
+#: includes/wpcm-match-functions.php:204
 msgid "Won by"
 msgstr ""
 
 #: includes/admin/post-types/meta-boxes/class-wpcm-meta-box-match-result.php:412
-#: includes/wpcm-match-functions.php:203
+#: includes/wpcm-match-functions.php:206
 msgid "Lost by"
 msgstr ""
 
@@ -1940,17 +1940,17 @@ msgid "Draw"
 msgstr ""
 
 #: includes/admin/post-types/meta-boxes/class-wpcm-meta-box-match-result.php:430
-#: includes/wpcm-match-functions.php:208
+#: includes/wpcm-match-functions.php:211
 msgid "runs"
 msgstr ""
 
 #: includes/admin/post-types/meta-boxes/class-wpcm-meta-box-match-result.php:431
-#: includes/wpcm-match-functions.php:210
+#: includes/wpcm-match-functions.php:213
 msgid "wickets"
 msgstr ""
 
 #: includes/admin/post-types/meta-boxes/class-wpcm-meta-box-match-result.php:432
-#: includes/wpcm-match-functions.php:212
+#: includes/wpcm-match-functions.php:215
 msgid "innings"
 msgstr ""
 
@@ -5462,12 +5462,12 @@ msgstr ""
 msgid "Link to club pages"
 msgstr ""
 
-#: includes/wpcm-match-functions.php:205
+#: includes/wpcm-match-functions.php:208
 msgid "Match Drawn"
 msgstr ""
 
-#: includes/wpcm-match-functions.php:235 includes/wpcm-match-functions.php:236
-#: includes/wpcm-match-functions.php:237
+#: includes/wpcm-match-functions.php:238 includes/wpcm-match-functions.php:239
+#: includes/wpcm-match-functions.php:240
 #: templates/single-match/box-scores.php:71
 #: templates/single-match/box-scores.php:76
 #: templates/single-match/box-scores.php:81
@@ -6425,43 +6425,43 @@ msgctxt "Sorting order"
 msgid "Order"
 msgstr ""
 
-#: includes/wpcm-match-functions.php:222 includes/wpcm-match-functions.php:223
+#: includes/wpcm-match-functions.php:225 includes/wpcm-match-functions.php:226
 msgctxt "HW - home walkover"
 msgid "H"
 msgstr ""
 
-#: includes/wpcm-match-functions.php:222 includes/wpcm-match-functions.php:224
+#: includes/wpcm-match-functions.php:225 includes/wpcm-match-functions.php:227
 msgctxt "HW - home walkover"
 msgid "W"
 msgstr ""
 
-#: includes/wpcm-match-functions.php:226 includes/wpcm-match-functions.php:227
+#: includes/wpcm-match-functions.php:229 includes/wpcm-match-functions.php:230
 msgctxt "AW - away walkover"
 msgid "A"
 msgstr ""
 
-#: includes/wpcm-match-functions.php:226 includes/wpcm-match-functions.php:228
+#: includes/wpcm-match-functions.php:229 includes/wpcm-match-functions.php:231
 msgctxt "AW - away walkover"
 msgid "W"
 msgstr ""
 
-#: includes/wpcm-match-functions.php:230 includes/wpcm-match-functions.php:231
-#: includes/wpcm-match-functions.php:232
+#: includes/wpcm-match-functions.php:233 includes/wpcm-match-functions.php:234
+#: includes/wpcm-match-functions.php:235
 msgctxt "Postponed"
 msgid "P"
 msgstr ""
 
-#: includes/wpcm-match-functions.php:505
+#: includes/wpcm-match-functions.php:508
 msgctxt "Neutral ground"
 msgid "N"
 msgstr ""
 
-#: includes/wpcm-match-functions.php:507
+#: includes/wpcm-match-functions.php:510
 msgctxt "Home ground"
 msgid "H"
 msgstr ""
 
-#: includes/wpcm-match-functions.php:509
+#: includes/wpcm-match-functions.php:512
 msgctxt "Away ground"
 msgid "A"
 msgstr ""
