@@ -92,7 +92,7 @@ function wpcm_match_players_item_order() {
 			continue;
 		}
 		$wpdb->update( $wpdb->posts, array( 'menu_order' => $counter ), array( 'ID' => $item_id ) );
-		++ $counter;
+		++$counter;
 	}
 	die( 1 );
 }
