@@ -3,9 +3,9 @@ Contributors: wpclubmanager, leonterry, daveyjake
 Tags: club, teams, sport, sports club, club management
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZGGZXX2EQTZ9E
 Requires at least: 4.9
-Tested up to: 6.4
+Tested up to: 6.5
 Requires PHP: 7.2
-Stable Tag: 2.2.15
+Stable Tag: 2.2.16
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -170,6 +170,10 @@ You can report security bugs through the Patchstack Vulnerability Disclosure Pro
 11. Front-end League Table
 
 == Changelog ==
+
+= 2.2.16 - 2nd April 2024 =
+
+- Fix: Player order not saving on match report when dragging to reorder
 
 = 2.2.15 - 26th March 2024 =
 
