@@ -51,8 +51,15 @@ class WPCM_Reset_Database {
 			'taxonomy'   => $taxonomy,
 			'hide_empty' => false,
 		) );
+
+		if ( empty( $terms ) || is_wp_error( $terms ) ) {
+			return;
+		}
+
 		foreach ( $terms as $term ) {
-			wp_delete_term( $term->term_id, $taxonomy );
+			if ( $term && $term->term_id ) {
+				wp_delete_term( $term->term_id, $taxonomy );
+			}
 		}
 	}
 }
