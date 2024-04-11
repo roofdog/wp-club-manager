@@ -102,6 +102,9 @@ if ( ! class_exists( 'WPClubManager' ) ) :
 			$this->constants();
 			$this->includes();
 
+			$installer = new WPCM_Install();
+			$installer->init();
+
 			add_filter( 'plugin_action_links_' . plugin_basename( $this->plugin_file ), array( $this, 'plugin_action_links' ) );
 			add_action( 'after_setup_theme', array( $this, 'compatibility' ) );
 			add_action( 'after_setup_theme', array( $this, 'include_template_functions' ), 11 );

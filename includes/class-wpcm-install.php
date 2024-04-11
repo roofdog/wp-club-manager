@@ -22,7 +22,7 @@ if ( ! class_exists( 'WPCM_Install' ) ) :
 		/**
 		 * Hook in tabs.
 		 */
-		public function __construct() {
+		public function init() {
 
 			register_activation_hook( WPCM_PLUGIN_FILE, array( $this, 'install' ) );
 
@@ -446,5 +446,3 @@ if ( ! class_exists( 'WPCM_Install' ) ) :
 	}
 
 endif;
-
-return new WPCM_Install();
