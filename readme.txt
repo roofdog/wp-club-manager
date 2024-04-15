@@ -5,7 +5,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Requires at least: 4.9
 Tested up to: 6.5
 Requires PHP: 7.2
-Stable Tag: 2.2.16
+Stable Tag: 2.2.17
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -170,6 +170,13 @@ You can report security bugs through the Patchstack Vulnerability Disclosure Pro
 11. Front-end League Table
 
 == Changelog ==
+
+= 2.2.17 - 15th April 2024 =
+
+- Fix: An error of type E_ERROR on league page for PHP 8+ installs
+- Fix: Fatal error on uninstall process for PHP8+ installs
+- Fix: Meta data not removed on uninstall
+- Fix: Undefined term_id notice on uninstall uninstall
 
 = 2.2.16 - 2nd April 2024 =
 

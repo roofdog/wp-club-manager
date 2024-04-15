@@ -17,7 +17,8 @@ if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 global $wpdb, $wp_roles;
 
 // Roles + caps
-$installer = include 'includes/class-wpcm-install.php';
+include 'includes/class-wpcm-install.php';
+$installer = new WPCM_Install();
 $installer->remove_roles();
 
 require_once 'includes/class-wpcm-reset-database.php';

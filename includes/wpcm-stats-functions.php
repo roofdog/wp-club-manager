@@ -432,16 +432,16 @@ if ( ! function_exists( 'get_wpcm_club_auto_stats' ) ) {
 				$output['w'] += $won;
 				if ( array_key_exists( 'd', $output ) ) {
 					$output['d']   += $draw;
-					$output['pts'] += $draw * get_option( 'wpcm_standings_draw_points' );
+					$output['pts'] += $draw * (int) get_option( 'wpcm_standings_draw_points', 1 );
 				}
 				$output['l'] += $lost;
 				if ( array_key_exists( 'otw', $output ) ) {
 					$output['otw'] += $otw;
-					$output['pts'] += $otw * get_option( 'wpcm_standings_otw_points' );
+					$output['pts'] += $otw * (int) get_option( 'wpcm_standings_otw_points', 0 );
 				}
 				if ( array_key_exists( 'otl', $output ) ) {
 					$output['otl'] += $otl;
-					$output['pts'] += $otl * get_option( 'wpcm_standings_otl_points' );
+					$output['pts'] += $otl * (int) get_option( 'wpcm_standings_otl_points', 1 );
 				}
 				$output['f'] += $f;
 				$output['a'] += $a;
@@ -452,16 +452,16 @@ if ( ! function_exists( 'get_wpcm_club_auto_stats' ) ) {
 					$output['b']   += $hb;
 					$output['pts'] += $hb;
 				}
-				$output['pts'] += $won * get_option( 'wpcm_standings_win_points' ) + $lost * get_option( 'wpcm_standings_loss_points' );
+				$output['pts'] += $won * (int) get_option( 'wpcm_standings_win_points', 3 ) + $lost * (int)get_option( 'wpcm_standings_loss_points', 0 );
 			}
 			if ( $postponed && 'home_win' == $walkover ) {
 				++$output['p'];
 				$output['w']   += 1;
-				$output['pts'] += get_option( 'wpcm_standings_win_points' );
+				$output['pts'] += (int) get_option( 'wpcm_standings_win_points', 3 );
 			} elseif ( $postponed && 'away_win' == $walkover ) {
 				++$output['p'];
 				$output['l']   += 1;
-				$output['pts'] += get_option( 'wpcm_standings_loss_points' );
+				$output['pts'] += (int) get_option( 'wpcm_standings_loss_points', 0 );
 			}
 		}
 
@@ -499,16 +499,16 @@ if ( ! function_exists( 'get_wpcm_club_auto_stats' ) ) {
 
 				if ( array_key_exists( 'd', $output ) ) {
 					$output['d']   += $draw;
-					$output['pts'] += $draw * get_option( 'wpcm_standings_draw_points' );
+					$output['pts'] += $draw * (int) get_option( 'wpcm_standings_draw_points', 1 );
 				}
 				$output['l'] += $lost;
 				if ( array_key_exists( 'otw', $output ) ) {
 					$output['otw'] += $otw;
-					$output['pts'] += $otw * get_option( 'wpcm_standings_otw_points' );
+					$output['pts'] += $otw * (int) get_option( 'wpcm_standings_otw_points', 0 );
 				}
 				if ( array_key_exists( 'otl', $output ) ) {
 					$output['otl'] += $otl;
-					$output['pts'] += $otl * get_option( 'wpcm_standings_otl_points' );
+					$output['pts'] += $otl * (int) get_option( 'wpcm_standings_otl_points', 1 );
 				}
 				$output['f'] += $f;
 				$output['a'] += $a;
@@ -520,16 +520,16 @@ if ( ! function_exists( 'get_wpcm_club_auto_stats' ) ) {
 					$output['pts'] += $ab;
 				}
 
-				$output['pts'] += $won * (float) get_option( 'wpcm_standings_win_points' ) + $lost * (float) get_option( 'wpcm_standings_loss_points' );
+				$output['pts'] += $won * (int) get_option( 'wpcm_standings_win_points', 3 ) + $lost * (int) get_option( 'wpcm_standings_loss_points', 0 );
 			}
 			if ( $postponed && 'away_win' == $walkover ) {
 				++$output['p'];
 				$output['w']   += 1;
-				$output['pts'] += get_option( 'wpcm_standings_win_points' );
+				$output['pts'] += (int) get_option( 'wpcm_standings_win_points', 3 );
 			} elseif ( $postponed && 'home_win' === $walkover ) {
 				++$output['p'];
 				$output['l']   += 1;
-				$output['pts'] += get_option( 'wpcm_standings_loss_points' );
+				$output['pts'] += (int) get_option( 'wpcm_standings_loss_points', 0 );
 			}
 		}
 

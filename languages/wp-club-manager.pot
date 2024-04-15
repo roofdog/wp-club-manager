@@ -2,9 +2,9 @@
 # This file is distributed under the GPLv3.
 msgid ""
 msgstr ""
-"Project-Id-Version: WP Club Manager 2.2.16\n"
+"Project-Id-Version: WP Club Manager 2.2.17\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wp-club-manager\n"
-"POT-Creation-Date: 2024-04-02 15:11:45+00:00\n"
+"POT-Creation-Date: 2024-04-15 11:49:16+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -305,7 +305,7 @@ msgid "Upgrade to Pro"
 msgstr ""
 
 #: includes/admin/class-wpcm-admin-menus.php:96
-#: includes/class-wp-club-manager.php:124
+#: includes/class-wp-club-manager.php:127
 msgid "Settings"
 msgstr ""
 
@@ -3064,37 +3064,37 @@ msgstr ""
 msgid "club-manager"
 msgstr ""
 
-#: includes/class-wp-club-manager.php:124
+#: includes/class-wp-club-manager.php:127
 msgid "View WP Club Manager Settings"
 msgstr ""
 
-#: includes/class-wp-club-manager.php:125
+#: includes/class-wp-club-manager.php:128
 msgid "View WP Club Manager Documentation"
 msgstr ""
 
-#: includes/class-wp-club-manager.php:125
+#: includes/class-wp-club-manager.php:128
 msgid "Docs"
 msgstr ""
 
-#: includes/class-wp-club-manager.php:126
+#: includes/class-wp-club-manager.php:129
 msgid "Support"
 msgstr ""
 
-#: includes/class-wp-club-manager.php:395
+#: includes/class-wp-club-manager.php:398
 #. translators: 1: plugin name(s).
 msgid "WP Club Manager requires the following plugin: %1$s."
 msgid_plural "WP Club Manager requires the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/class-wp-club-manager.php:401
+#: includes/class-wp-club-manager.php:404
 #. translators: 1: plugin name(s).
 msgid "WP Club Manager recommends the following plugin: %1$s."
 msgid_plural "WP Club Manager recommends the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/class-wp-club-manager.php:407
+#: includes/class-wp-club-manager.php:410
 #. translators: 1: plugin name(s).
 msgid ""
 "The following plugin needs to be updated to its latest version to ensure "
@@ -3105,7 +3105,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/class-wp-club-manager.php:413
+#: includes/class-wp-club-manager.php:416
 #. translators: 1: plugin name(s).
 msgid ""
 "Plugin not activated. A higher version of %s is needed for this plugin. "

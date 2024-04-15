@@ -35,7 +35,7 @@ class WPCM_Reset_Database {
 		$this->delete_terms( 'wpcm_team' );
 		$this->delete_terms( 'wpcm_venue' );
 
-		$wpdb->query( "DELETE FROM meta {$wpdb->postmeta} meta INNER JOIN {$wpdb->posts} posts ON posts.ID = meta.post_id WHERE posts.post_type IN ( 'wpcm_player', 'wpcm_staff', 'wpcm_club', 'wpcm_match', 'wpcm_sponsor', 'wpcm_roster', 'wpcm_table' );" );
+		$wpdb->query( "DELETE meta FROM {$wpdb->postmeta} meta INNER JOIN {$wpdb->posts} posts ON posts.ID = meta.post_id WHERE posts.post_type IN ( 'wpcm_player', 'wpcm_staff', 'wpcm_club', 'wpcm_match', 'wpcm_sponsor', 'wpcm_roster', 'wpcm_table' );" );
 		$wpdb->query( "DELETE FROM {$wpdb->posts} WHERE post_type IN ( 'wpcm_player', 'wpcm_staff', 'wpcm_club', 'wpcm_match', 'wpcm_sponsor', 'wpcm_roster', 'wpcm_table' );" );
 
 		delete_option( 'wpclubmanager_installed' );
@@ -51,8 +51,15 @@ class WPCM_Reset_Database {
 			'taxonomy'   => $taxonomy,
 			'hide_empty' => false,
 		) );
+
+		if ( empty( $terms ) || is_wp_error( $terms ) ) {
+			return;
+		}
+
 		foreach ( $terms as $term ) {
-			wp_delete_term( $term->term_id, $taxonomy );
+			if ( $term && $term->term_id ) {
+				wp_delete_term( $term->term_id, $taxonomy );
+			}
 		}
 	}
 }
