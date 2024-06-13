@@ -65,9 +65,39 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		<?php
 	} else {
+		// You don't need an API key to embed Google Maps.
+		if ( empty( $api_key ) ) {
+			$url = '//maps.google.com/maps';
+
+			$args = array_map(
+				'urlencode',
+				array(
+					'q'      => $address,
+					'z'      => $zoom,
+					'output' => 'embed',
+				),
+			);
+
+			$src_url = add_query_arg( $args, $url );
+		} else {
+			$url = 'https://www.google.com/maps/embed/v1/search';
+
+			$args = array_map(
+				'urlencode',
+				array(
+					'key'     => $api_key,
+					'q'       => $address,
+					'center'  => sprintf( '%s,%s', $latitude, $longitude ),
+					'zoom'    => $zoom,
+					'maptype' => $maptype,
+				),
+			);
+
+			$src_url = add_query_arg( $args, $url );
+		}
 		?>
 
-		<iframe class="wpcm-google-map wpcm-venue-map" width="<?php echo esc_attr( $width ); ?>" height="<?php echo esc_attr( $height ); ?>" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/search?key=<?php echo esc_attr( $api_key ); ?>&amp;q=<?php echo esc_attr( $address ); ?>&amp;center=<?php echo esc_attr( $latitude ); ?>,<?php echo esc_attr( $longitude ); ?>&amp;zoom=<?php echo esc_attr( $zoom ); ?>&amp;maptype=<?php echo esc_attr( $maptype ); ?>" allowfullscreen></iframe>
+		<iframe class="wpcm-google-map wpcm-venue-map" width="<?php echo esc_attr( $width ); ?>" height="<?php echo esc_attr( $height ); ?>" frameborder="0" style="border:0" src="<?php echo esc_url( $src_url ); ?>" allowfullscreen></iframe>
 
 		<?php
 	}

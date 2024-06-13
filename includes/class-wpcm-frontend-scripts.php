@@ -101,8 +101,8 @@ class WPCM_Frontend_Scripts {
 
 		global $post;
 
-		$club     = get_option( 'wpcm_default_club' );
-		$post_url = get_permalink();
+		$club = get_option( 'wpcm_default_club' );
+
 		if ( is_league_mode() ) {
 			// $post_thumb = the_custom_logo();
 			$custom_logo_id = get_theme_mod( 'custom_logo' );
@@ -118,14 +118,15 @@ class WPCM_Frontend_Scripts {
 
 		if ( is_front_page() ) :
 
-			$data['@context'] = 'http://schema.org/';
-			$data['@type']    = 'Organization';
+			$data['@context'] = 'https://schema.org/';
+			$data['@type']    = 'SportsOrganization';
 			$data['name']     = get_bloginfo( 'name' );
 			$data['logo']     = $post_thumb;
 			$data['url']      = site_url();
 
 			/**
-			 * Filters the front page LD+JSON schema.
+			 * Filters the front page LD+JSON schema. See {@link https://schema.org/SportsOrganization SportsOrganization}
+			 * on Scehma.org for more information.
 			 *
 			 * @since 2.2.5
 			 *
@@ -133,9 +134,7 @@ class WPCM_Frontend_Scripts {
 			 */
 			$data = apply_filters( 'wpclubmanager_schema_front_page', $data );
 
-			echo '<script type="application/ld+json">';
-			echo json_encode( $data );
-			echo '</script>';
+			printf( '<script type="application/ld+json"> %s </script>', wp_json_encode( $data ) );
 
 		endif;
 
@@ -156,11 +155,11 @@ class WPCM_Frontend_Scripts {
 				$address = '';
 			}
 
-			$data['@context']  = 'http://schema.org/';
+			$data['@context']  = 'https://schema.org/';
 			$data['@type']     = 'SportsEvent';
 			$data['name']      = $post->post_title;
 			$data['image']     = $post_thumb;
-			$data['url']       = $post_url;
+			$data['url']       = get_permalink();
 			$data['location']  = array(
 				'@type'   => 'Place',
 				'name'    => $venue_name,
@@ -172,7 +171,8 @@ class WPCM_Frontend_Scripts {
 			$data['startDate'] = $post->post_date;
 
 			/**
-			 * Filters the SportsEvent LD+JSON schema.
+			 * Filters the SportsEvent LD+JSON schema. See {@link https://schema.org/SportsTeam SportsTeam}
+			 * on Schema.org for more information.
 			 *
 			 * @since 2.2.5
 			 *
@@ -180,9 +180,7 @@ class WPCM_Frontend_Scripts {
 			 */
 			$data = apply_filters( 'wpclubmanager_schema_sports_event', $data );
 
-			echo '<script type="application/ld+json">';
-			echo json_encode( $data );
-			echo '</script>';
+			printf( '<script type="application/ld+json"> %s </script>', wp_json_encode( $data ) );
 
 		endif;
 	}
